@@ -12,23 +12,23 @@
 <br><code>2019-04-24 18:20:40</code>&nbsp;make -j32 modules
 <br><code>2019-04-24 18:28:51</code>&nbsp;make -j32
 <br><code>2019-04-24 18:31:17</code>&nbsp;make install
-<br><code><code>#здесь вывалились варнинги, но на вид всё вроде встало как надо</code>
+<br><code>#здесь вывалились варнинги, но на вид всё вроде встало как надо</code>
 <br><code>2019-04-24 18:33:22</code>&nbsp;make -j32 modules_install
 <br><code>2019-04-24 18:35:54</code>&nbsp;reboot
 <br><code>2019-04-24 18:38:21</code>&nbsp;uname -r 
-<br><code><code>#оказалось, что грузится дефолтное ядро</code>
+<br><code>#оказалось, что грузится дефолтное ядро</code>
 <br><code>2019-04-24 18:40:07</code>&nbsp;grep "^menuentry" /boot/grub2/grub.cfg | cut -d "'" -f2
 <br><code>2019-04-24 18:40:24</code>&nbsp;grub2-editenv list
 <br><code>2019-04-24 18:41:47</code>&nbsp;grub2-set-default "CentOS Linux (5.0.9) 7 (Core)"
 <br><code>2019-04-24 18:41:49</code>&nbsp;grub2-editenv list
-<br><code><code>#принудительно в grub.cfg указал какое ядро грузить</code>
+<br><code>#принудительно в grub.cfg указал какое ядро грузить</code>
 <br><code>2019-04-24 18:42:11</code>&nbsp;reboot 
-<br><code><code>#5.0.9 не завелась... загрузлся в дефолтное ядро</code>
+<br><code>#5.0.9 не завелась... загрузлся в дефолтное ядро</code>
 <br><code>2019-04-24 18:49:33</code>&nbsp;cd /usr/src/linux-5.0.9
 <br><code>2019-04-24 18:49:41</code>&nbsp;make install
 <br><code>2019-04-24 18:53:26</code>&nbsp;make modules_install
-<br><code><code>#на удивление со второй попытки всё прошло без ошибок</code>
+<br><code>#на удивление со второй попытки всё прошло без ошибок</code>
 <br><code>2019-04-24 18:55:48</code>&nbsp;reboot 
 <br><code>2019-04-24 18:56:33</code>&nbsp;uname -sr
 <br><code>Linux 5.0.9
-<br><code><code>#done</code>
+<br><code>#done</code>
