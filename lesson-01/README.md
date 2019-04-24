@@ -31,4 +31,4 @@
 <br>2019-04-24 18:55:48	reboot 
 <br>2019-04-24 18:56:33	uname -sr
 <br>Linux 5.0.9
-<br<code>#done</code>
+<br><code>#done</code>
