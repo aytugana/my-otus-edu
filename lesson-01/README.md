@@ -3,7 +3,6 @@
 2019-04-24 17:57:25	yum install -y ncurses-devel make gcc bc bison flex elfutils-libelf-devel openssl-devel grub2 wget
 
 2019-04-24 17:58:05	cd /usr/src/
-
 2019-04-24 17:58:11	wget https://cdn.kernel.org/pub/linux/kernel/v5.x/linux-5.0.9.tar.xz
 
 2019-04-24 17:59:37	tar -xvf linux-5.0.9.tar.xz 
