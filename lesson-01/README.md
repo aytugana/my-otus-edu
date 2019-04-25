@@ -23,12 +23,12 @@
 <br><code>2019-04-24 18:41:49</code>&nbsp;grub2-editenv list
 <br><code>#принудительно в grub.cfg указал какое ядро грузить</code>
 <br><code>2019-04-24 18:42:11</code>&nbsp;reboot 
-<br><code>#5.0.9 не завелась... загрузлся в дефолтное ядро</code>
+<br><code>#5.0.9 не завелась... загрузился в дефолтное ядро</code>
 <br><code>2019-04-24 18:49:33</code>&nbsp;cd /usr/src/linux-5.0.9
 <br><code>2019-04-24 18:49:41</code>&nbsp;make install
 <br><code>2019-04-24 18:53:26</code>&nbsp;make modules_install
 <br><code>#на удивление со второй попытки всё прошло без ошибок</code>
 <br><code>2019-04-24 18:55:48</code>&nbsp;reboot 
 <br><code>2019-04-24 18:56:33</code>&nbsp;uname -sr
-<br><code>Linux 5.0.9
+<br><code>Linux 5.0.9</code>
 <br><code>#done</code>
