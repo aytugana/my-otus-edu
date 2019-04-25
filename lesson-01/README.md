@@ -30,5 +30,5 @@
 <br><code>#на удивление со второй попытки всё прошло без ошибок</code>
 <br><code>2019-04-24 18:55:48</code>&nbsp;reboot 
 <br><code>2019-04-24 18:56:33</code>&nbsp;uname -sr
-<br><code>Linux 5.0.9</code>
+<br>Linux 5.0.9
 <br><code>#done</code>
