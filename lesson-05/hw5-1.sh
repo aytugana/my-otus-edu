@@ -1,7 +1,7 @@
 #!/bin/bash
 
 hertz=$(getconf CLK_TCK)
-list=$(ls -l /proc/ | awk '$2 == 9 {print $9}' | sort -h)
+list=$(ls -1 /proc/ | egrep "[0-9]{1,}" | sort -h)
 for pid in $list
 do
     if [ -d /proc/$pid ]; then
