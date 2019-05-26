@@ -1,0 +1,11 @@
+--- mc-4.8.7/lib/skin/common.c.new   2019-05-25 21:42:22.970368683 +0000
++++ mc-4.8.7/lib/skin/common.c       2012-05-09 14:07:44.000000000 +0000
+@@ -75,7 +75,7 @@
+         return g_strdup (tmp_str);
+
+     /*  from config. Or 'default' if no present in config */
+-    return mc_config_get_string (mc_main_config, CONFIG_APP_SECTION, "skin", "default");
++    return mc_config_get_string (mc_main_config, CONFIG_APP_SECTION, "skin", "darkfar");
+ }
+
+ /* --------------------------------------------------------------------------------------------- */
