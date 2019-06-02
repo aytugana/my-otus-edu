@@ -1,0 +1,15 @@
+home = ENV['HOME']
+vm_name = 'lesson-07'
+vm_disks_place = home + '/VB_VMs/' + vm_name + '/'
+
+Vagrant.configure(2) do |config|
+    config.vm.box = "centos/7"
+    config.vm.network "private_network", ip: "192.168.10.102"
+    config.vm.host_name = vm_name.to_s
+    config.vm.provider :virtualbox do |vb|
+        vb.customize ["modifyvm", :id, "--memory", "4096"]
+        vb.customize ["modifyvm", :id, "--cpus", "6"]
+    end
+    config.vm.provision "shell", path: "myservice-setup.sh"
+    config.vm.provision "shell", path: "rewrite-fcgi.sh"
+end

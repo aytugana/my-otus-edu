@@ -1,0 +1,7 @@
+[Unit]
+Description=myservice - my log scanner
+
+[Service]
+Type=oneshot
+EnvironmentFile=/etc/sysconfig/myservice.conf
+ExecStart=/usr/bin/myservice.sh
