@@ -55,9 +55,7 @@ rd.break скидывает в шелл ramdisk'а, где уже вручную
 
     3.4 Отключаем в grub ключи rhgb и quiet, ребутимся
 
-    3.5 При загрузке, либо в дальнейшем в dmesg видим пингвина
-
-    <img src="https://github.com/aytugana/my-otus-edu/blob/master/lesson-08/tux.png">
+    3.5 При загрузке, либо в дальнейшем в dmesg <a href="https://github.com/aytugana/my-otus-edu/blob/master/lesson-08/tux.png">видим</a> пингвина
 
     3.6 Радуемся, пишем отчёт, сдаём домашку
 
