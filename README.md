@@ -6,3 +6,6 @@
 <br><a href="https://github.com/aytugana/my-otus-edu/tree/master/lesson-05">Домашнее задание №5</a>
 <br><a href="https://github.com/aytugana/my-otus-edu/tree/master/lesson-06">Домашнее задание №6</a>
 <br><a href="https://github.com/aytugana/my-otus-edu/tree/master/lesson-07">Домашнее задание №7</a>
+<br><a href="https://github.com/aytugana/my-otus-edu/tree/master/lesson-07">Домашнее задание №8</a>
+<br><a href="https://github.com/aytugana/my-otus-edu/tree/master/lesson-07">Домашнее задание №9</a>
+<br><a href="https://github.com/aytugana/my-otus-edu/tree/master/lesson-07">Домашнее задание №10</a>
