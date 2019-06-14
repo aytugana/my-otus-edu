@@ -1,0 +1,9 @@
+---
+- name: homework-9 - ansible - role
+  hosts: host1
+  become: true
+  gather_facts: false
+
+  roles:
+    - hw9.role
+
