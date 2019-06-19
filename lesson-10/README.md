@@ -26,4 +26,4 @@
 
 <h4>3. Загрузка образа в docker hub</h4>
 
-    Образ загружен в <a href="https://cloud.docker.com/repository/docker/acubed/myotus10">мой репозиторий</a>
+    Образ загружен в https://cloud.docker.com/repository/docker/acubed/myotus10
