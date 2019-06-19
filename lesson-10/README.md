@@ -1,6 +1,6 @@
 <h1><b>Docker</b></h1>
 
-<h4>1. Для создания образа был написан sh скрипт в котором:</h4>
+<h4>1. Для создания образа был написан <a href="https://github.com/aytugana/my-otus-edu/blob/master/lesson-10/buildnrun.sh">sh скрипт</a> в котором:</h4>
 
     - с помощью docker build - < STDIN pipe описывается содержимое;
 
