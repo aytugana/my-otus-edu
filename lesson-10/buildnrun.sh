@@ -12,14 +12,13 @@ ENTRYPOINT ["nginx"]
 EXPOSE 80
 EOF
 
-#docker run -d --name $name-run -p 8088:80 --rm $name:latest
-#echo -e "\n\nTesting nginx: \n"
-#curl http://localhost:8088/
-#echo -e "\n\nRemoving $name crap:"
+docker run -d --name $name-run -p 8088:80 --rm $name:latest
+echo -e "\n\nTesting nginx: \n"
+curl http://localhost:8088/
+echo -e "\n\nRemoving $name crap:"
 
-#docker stop $name-run
-#docker container prune -f
-#docker rmi -f $name
+docker stop $name-run
+docker container prune -f
+docker rmi -f $name
 docker images ls -a
 docker container ls
-
