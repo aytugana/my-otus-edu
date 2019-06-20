@@ -1,6 +1,6 @@
 <h1><b>Docker</b></h1>
 
-<h4>1. Для создания образа был написан <a href="https://github.com/aytugana/my-otus-edu/blob/master/lesson-10/buildnrun.sh">sh скрипт</a> в котором:</h4>
+<h2>1. Для создания образа был написан <a href="https://github.com/aytugana/my-otus-edu/blob/master/lesson-10/buildnrun.sh">sh скрипт</a> в котором:</h2>
 
 - с помощью docker build - < STDIN pipe описывается содержимое;
 
@@ -17,20 +17,20 @@
 - происходит остановка и очистка
 
 
-<h4>2. Теоретические вопросы</h4>
+<h2>2. Теоретические вопросы</h2>
 
-<i>Разница м/у контейнером и образом</i>
+<h4>Разница м/у контейнером и образом</h4>
 
 Контейнер - есть образ поверх которого лежат RO слои-изменения,
 
 верхний результирующий слой доступен в режиме RW.
 
-<i>Можно ли собрать ядро в docker</i>
+<h4>Можно ли собрать ядро в docker</h4>
 
 На сколько я понял нельзя, потому как используется ядро хостового устройства,
 
 но не могу понять как работает это: <a href="https://hub.docker.com/r/droid4control/olinuxino-kernel/">olinuxino-kernel</a>
 
-<h4>3. Загрузка образа в docker hub</h4>
+<h2>3. Загрузка образа в docker hub</h2>
 
 Образ загружен в <a href="https://cloud.docker.com/repository/docker/acubed/myotus10">мой репозиторий</a>.
