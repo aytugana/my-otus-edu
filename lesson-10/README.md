@@ -19,7 +19,7 @@
 
 <h4>2. Теоретические вопросы</h4>
 
-<h8>Разница м/у контейнером и образом</h8>
+<p><h8>Разница м/у контейнером и образом</h8>
 
 Контейнер - есть образ поверх которого лежат RO слои-изменения,
 
@@ -29,8 +29,8 @@
 
 На сколько я понял нельзя, потому как используется ядро хостового устройства,
 
-но не могу понять как работает это: https://hub.docker.com/r/droid4control/olinuxino-kernel/
+но не могу понять как работает это: <a href="https://hub.docker.com/r/droid4control/olinuxino-kernel/">olinuxino-kernel</a></p>
 
 <h4>3. Загрузка образа в docker hub</h4>
 
-Образ загружен в https://cloud.docker.com/repository/docker/acubed/myotus10
+Образ загружен в <a href="https://cloud.docker.com/repository/docker/acubed/myotus10">мой репозиторий</a>.
