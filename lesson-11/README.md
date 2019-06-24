@@ -32,5 +32,5 @@
 
   - /usr/bin/docker *
 
-  - /usr/bin/systemctl resart docker
+  - /usr/bin/systemctl restart docker
 
