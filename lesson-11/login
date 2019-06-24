@@ -1,0 +1,4 @@
+auth    sufficient          pam_exec.so expose_authtok debug log=/var/log/messages /usr/sbin/workday
+auth    [success=1 default=ignore]  pam_unix.so nullok_secure
+auth    requisite           pam_deny.so
+auth    required            pam_permit.so
