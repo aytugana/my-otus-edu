@@ -11,5 +11,5 @@
 
 <br><a href="https://github.com/aytugana/my-otus-edu/tree/master/lesson-10">Домашнее задание №10</a>
 <br><a href="https://github.com/aytugana/my-otus-edu/tree/master/lesson-11">Домашнее задание №11</a>
-<br><a href="https://github.com/aytugana/my-otus-edu/tree/master/lesson-12">Домашнее задание №12</a>
 <br><a href="https://github.com/aytugana/my-otus-edu/tree/master/lesson-13">Домашнее задание №13</a>
+<br><a href="https://github.com/aytugana/my-otus-edu/tree/master/lesson-14">Домашнее задание №14</a>
