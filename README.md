@@ -13,3 +13,14 @@
 <br><a href="https://github.com/aytugana/my-otus-edu/tree/master/lesson-11">Домашнее задание №11</a>
 <br><a href="https://github.com/aytugana/my-otus-edu/tree/master/lesson-13">Домашнее задание №13</a>
 <br><a href="https://github.com/aytugana/my-otus-edu/tree/master/lesson-14">Домашнее задание №14</a>
+<br><a href="https://github.com/aytugana/my-otus-edu/tree/master/lesson-15">Домашнее задание №15</a>
+<br><a href="https://github.com/aytugana/my-otus-edu/tree/master/lesson-16">Домашнее задание №16</a>
+<br><a href="https://github.com/aytugana/my-otus-edu/tree/master/lesson-18">Домашнее задание №18</a>
+
+<br><a href="https://github.com/aytugana/my-otus-edu/tree/master/lesson-19">Домашнее задание №19</a>
+<br><a href="https://github.com/aytugana/my-otus-edu/tree/master/lesson-20">Домашнее задание №20</a>
+<br><a href="https://github.com/aytugana/my-otus-edu/tree/master/lesson-21">Домашнее задание №21</a>
+<br><a href="https://github.com/aytugana/my-otus-edu/tree/master/lesson-22">Домашнее задание №22</a>
+<br><a href="https://github.com/aytugana/my-otus-edu/tree/master/lesson-23">Домашнее задание №23</a>
+<br><a href="https://github.com/aytugana/my-otus-edu/tree/master/lesson-25">Домашнее задание №25</a>
+<br><a href="https://github.com/aytugana/my-otus-edu/tree/master/lesson-26">Домашнее задание №26</a>
