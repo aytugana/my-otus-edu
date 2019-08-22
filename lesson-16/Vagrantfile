@@ -1,0 +1,34 @@
+# -*- mode: ruby -*-
+# vim: set ft=ruby :
+
+MACHINES = {
+  :L16srv => {
+        :box_os => "centos/7",
+        :ip_addr => '192.168.10.161',
+        :provision_sh => "p_srv.sh",
+        :cpu => "6",
+        :ram => "4096",
+  },
+  :L16cli => {
+        :box_os => "centos/7",
+        :ip_addr => '192.168.10.162',
+        :provision_sh => "p_cli.sh",
+        :cpu => "1",
+        :ram => "512",
+  },
+}
+
+Vagrant.configure("2") do |config|
+  MACHINES.each do |boxname, boxconfig|
+      config.vm.define boxname do |box|
+          box.vm.box = boxconfig[:box_os]
+          box.vm.host_name = boxname.to_s
+          box.vm.network "private_network", ip: boxconfig[:ip_addr]
+          box.vm.provider :virtualbox do |vb|
+            vb.customize ["modifyvm", :id, "--cpus", boxconfig[:cpu]]
+            vb.customize ["modifyvm", :id, "--memory", boxconfig[:ram]]
+          end
+          box.vm.provision "shell", path: boxconfig[:provision_sh]
+      end
+  end
+end
