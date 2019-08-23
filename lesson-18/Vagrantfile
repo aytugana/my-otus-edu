@@ -1,0 +1,92 @@
+# -*- mode: ruby -*-
+# vim: set ft=ruby :
+
+MACHINES = {
+  :inetRouter => {
+    :box_name => "centos/6",
+    :provision_sh => "scripts/p_ir.sh",
+    :net => [
+      {ip: '192.168.255.1', adapter: 2, :device => "eth1",   netmask: "255.255.255.252", virtualbox__intnet: "inet"},
+    ]
+  },
+  :centralRouter => {
+    :box_name => "centos/7",
+    :provision_sh => "scripts/p_cr.sh",
+    :net => [
+      {ip: '192.168.255.2', adapter: 2, :device => "eth1",   netmask: "255.255.255.252", virtualbox__intnet: "inet"},
+      {ip: '192.168.0.1',   adapter: 3, :device => "eth2",   netmask: "255.255.255.240", virtualbox__intnet: "directors"},
+      {ip: '192.168.255.9', adapter: 4, :device => "eth3",   netmask: "255.255.255.252", virtualbox__intnet: "net-O1"},
+      {ip: '192.168.255.5', adapter: 5, :device => "eth4",   netmask: "255.255.255.252", virtualbox__intnet: "net-O2"},
+    ]
+  },
+  :centralServer => {
+    :box_name => "centos/7",
+    :provision_sh => "scripts/p_cs.sh",
+    :net => [
+      {ip: '192.168.0.2',   adapter: 2, :device => "eth1",   netmask: "255.255.255.240", virtualbox__intnet: "directors"},
+    ]
+  },
+  :office1Router => {
+    :box_name => "centos/7",
+    :provision_sh => "scripts/p_o1r.sh",
+    :net => [
+      {ip: '192.168.255.10',  adapter: 2, :device => "eth1",   netmask: "255.255.255.252", virtualbox__intnet: "net-O1"},
+      {ip: '192.168.2.1',     adapter: 3, :device => "eth2",   netmask: "255.255.255.192", virtualbox__intnet: "net-O1-dev"},
+      {ip: '192.168.2.65',    adapter: 4, :device => "eth3",   netmask: "255.255.255.192", virtualbox__intnet: "net-O1-testservers"},
+      {ip: '192.168.2.129',   adapter: 5, :device => "eth4",   netmask: "255.255.255.192", virtualbox__intnet: "net-O1-mngr"},
+    ]
+  },
+  :office1Server => {
+    :box_name => "centos/7",
+    :provision_sh => "scripts/p_o1s.sh",
+    :net => [
+      {ip: '192.168.2.66',   adapter: 2, :device => "eth1",   netmask: "255.255.255.192", virtualbox__intnet: "net-O1-testservers"},
+    ]
+  },
+  :office2Router => {
+    :box_name => "centos/7",
+    :provision_sh => "scripts/p_o2r.sh",
+    :net => [
+      {ip: '192.168.255.6',   adapter: 2, :device => "eth1",   netmask: "255.255.255.252", virtualbox__intnet: "net-O2"},
+      {ip: '192.168.1.1',     adapter: 3, :device => "eth2",   netmask: "255.255.255.128", virtualbox__intnet: "net-O2-dev"},
+      {ip: '192.168.1.129',   adapter: 4, :device => "eth3",   netmask: "255.255.255.192", virtualbox__intnet: "net-O2-testservers"},
+      {ip: '192.168.1.193',   adapter: 5, :device => "eth4",   netmask: "255.255.255.192", virtualbox__intnet: "net-O2-hw"},
+    ]
+  },
+  :office2Server => {
+    :box_name => "centos/7",
+    :provision_sh => "scripts/p_o2s.sh",
+    :net => [
+      {ip: '192.168.1.130',   adapter: 2, :device => "eth1",   netmask: "255.255.255.192", virtualbox__intnet: "net-O2-testservers"},
+    ]
+  },
+}
+
+Vagrant.configure("2") do |config|
+
+  MACHINES.each do |boxname, boxconfig|
+
+    config.vm.define boxname do |box|
+
+        box.vm.box = boxconfig[:box_name]
+        box.vm.host_name = boxname.to_s
+
+        boxconfig[:net].each do |ipconf|
+          box.vm.network "private_network", ipconf
+        end
+
+        box.vm.provider :virtualbox do |vb|
+          vb.customize ["modifyvm", :id, "--memory", "256"]
+          vb.customize ["modifyvm", :id, "--cpus", "1"]
+          vb.name = boxname.to_s
+        end
+
+        if boxconfig.key?(:public)
+          box.vm.network "public_network", boxconfig[:public]
+        end
+
+        box.vm.provision "shell", run: "always", path: boxconfig[:provision_sh]
+
+    end
+  end
+end
