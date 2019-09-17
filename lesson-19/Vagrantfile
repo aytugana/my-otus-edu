@@ -1,0 +1,65 @@
+# -*- mode: ruby -*-
+# vim: set ft=ruby :
+
+MACHINES = {
+  :inetRouter => {
+    :box_name => "centos/6",
+    :provision_sh => "scripts/p_ir.sh",
+    :net => [
+      {ip: '192.168.255.1', adapter: 2, :device => "eth1",   netmask: "255.255.255.252", virtualbox__intnet: "inet"},
+    ]
+  },
+  :inetRouter2 => {
+    :box_name => "centos/6",
+    :provision_sh => "scripts/p_ir2.sh",
+    :net => [
+      {ip: '192.168.250.1', adapter: 2, :device => "eth1",   netmask: "255.255.255.252", virtualbox__intnet: "inet2"},
+    ]
+  },
+  :centralRouter => {
+    :box_name => "centos/7",
+    :provision_sh => "scripts/p_cr.sh",
+    :net => [
+      {ip: '192.168.255.2', adapter: 2, :device => "eth1",   netmask: "255.255.255.252", virtualbox__intnet: "inet"},
+      {ip: '192.168.0.1',   adapter: 3, :device => "eth2",   netmask: "255.255.255.240", virtualbox__intnet: "servers"},
+      {ip: '192.168.250.2', adapter: 4, :device => "eth3",   netmask: "255.255.255.252", virtualbox__intnet: "inet2"},
+    ]
+  },
+  :centralServer => {
+    :box_name => "centos/7",
+    :provision_sh => "scripts/p_cs.sh",
+    :net => [
+      {ip: '192.168.0.2',   adapter: 2, :device => "eth1",   netmask: "255.255.255.240", virtualbox__intnet: "servers"},
+    ]
+  },
+
+}
+
+Vagrant.configure("2") do |config|
+
+  MACHINES.each do |boxname, boxconfig|
+
+    config.vm.define boxname do |box|
+
+        box.vm.box = boxconfig[:box_name]
+        box.vm.host_name = boxname.to_s
+
+        boxconfig[:net].each do |ipconf|
+          box.vm.network "private_network", ipconf
+        end
+
+        box.vm.provider :virtualbox do |vb|
+          vb.customize ["modifyvm", :id, "--memory", "256"]
+          vb.customize ["modifyvm", :id, "--cpus", "1"]
+          vb.name = boxname.to_s
+        end
+
+        if boxconfig.key?(:public)
+          box.vm.network "public_network", boxconfig[:public]
+        end
+
+        box.vm.provision "shell", run: "always", path: boxconfig[:provision_sh]
+
+    end
+  end
+end
